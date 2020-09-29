@@ -35,6 +35,7 @@ namespace Iosp
 
     public override void Initialize(AnalysisContext context)
     {
+      context.EnableConcurrentExecution();
       context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze | GeneratedCodeAnalysisFlags.ReportDiagnostics);
       
       var kinds = new[]
@@ -61,7 +62,7 @@ namespace Iosp
       if (symbol == null)
         return;
       
-      var methodCategory = MethodCategorizer.CategorizeMethod(symbol as IMethodSymbol ,op.SemanticModel);
+      var methodCategory = MethodCategorizer.CategorizeMethod(symbol, op.SemanticModel);
 
       var diagnostic = DiagnoseMethod(methodCategory, op);
 
@@ -94,10 +95,8 @@ namespace Iosp
       public static MethodDeclarationSyntax GetDeclaringMethod(IOperation op)
       {
         var method = op.Syntax.Ancestors().FirstOrDefault(x => x.Kind() == SyntaxKind.MethodDeclaration);
-        if (method == null)
-          return null;
 
-        return (MethodDeclarationSyntax)method;
+        return (MethodDeclarationSyntax) method;
       }
 
   }
