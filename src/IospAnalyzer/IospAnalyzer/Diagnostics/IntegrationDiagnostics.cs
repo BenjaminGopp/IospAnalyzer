@@ -6,9 +6,9 @@ namespace Iosp
   internal static class IntegrationDiagnostics
   {
 
-    internal static DiagnosticDescriptor MustNotCallApiDiagnostic = new DiagnosticDescriptor("IOSP1001", "IOSP", "Integration must not call API", "Integration", DiagnosticSeverity.Error, true);
-    internal static DiagnosticDescriptor MustNotUseForLoopDiagnostic = new DiagnosticDescriptor("IOSP1002", "IOSP", "Integration must not use for loop", "Integration", DiagnosticSeverity.Error, true);
-    internal static DiagnosticDescriptor MustNotUseWhileLoopDiagnostic = new DiagnosticDescriptor("IOSP1003", "IOSP", "Integration must not use while loop", "Integration", DiagnosticSeverity.Error, true);
+    internal static DiagnosticDescriptor MustNotCallApiDiagnostic = new DiagnosticDescriptor("IOSP1001", "Integration must not call API", "Integration must not call API", "Integration", DiagnosticSeverity.Error, true);
+    internal static DiagnosticDescriptor MustNotUseForLoopDiagnostic = new DiagnosticDescriptor("IOSP1002", "Integration must not use for loop", "Integration must not use for loop", "Integration", DiagnosticSeverity.Error, true);
+    internal static DiagnosticDescriptor MustNotUseWhileLoopDiagnostic = new DiagnosticDescriptor("IOSP1003", "Integration must not use while loop", "Integration must not use while loop", "Integration", DiagnosticSeverity.Error, true);
 
 
     public static Diagnostic MustNotCallApi(Location location)

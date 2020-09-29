@@ -8,22 +8,23 @@
 
   <PropertyGroup>
     <PackageId>IospAnalyzer</PackageId>
-    <PackageVersion>1.0.0.0</PackageVersion>
-    <Authors>Gopp_B</Authors>
-    <PackageLicenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</PackageLicenseUrl>
-    <PackageProjectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</PackageProjectUrl>
-    <PackageIconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</PackageIconUrl>
-    <RepositoryUrl>http://REPOSITORY_URL_HERE_OR_DELETE_THIS_LINE</RepositoryUrl>
+    <PackageVersion>0.3.0.0-preview</PackageVersion>
+    <Authors>Benjamin Gopp</Authors>
+    <PackageProjectUrl>https://github.com/BenjaminGopp/IospAnalyzer</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Description>IospAnalyzer</Description>
-    <PackageReleaseNotes>Summary of changes made in this release of the package.</PackageReleaseNotes>
-    <Copyright>Copyright</Copyright>
-    <PackageTags>IospAnalyzer, analyzers</PackageTags>
+    <Description>IospAnalyzer is an Roslyn analyzer to enforce the integration operation segregation principle while coding</Description>
+    <PackageReleaseNotes>Bug fixed: attributes not being recognized</PackageReleaseNotes>
+    <Copyright>Copyright ©2020 Benjamin Gopp</Copyright>
+    <PackageTags>IospAnalyzer, analyzers, cleancode, csharp, c#, roslyn, iosp, principles</PackageTags>
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <RootNamespace>Iosp</RootNamespace>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>0.3.0-preview</Version>
   </PropertyGroup>
 
+
   <ItemGroup>
+    <PackageReference Include="IospAnalyzer.Attributes" Version="1.0.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="3.7.0" PrivateAssets="all" />
     <PackageReference Update="NETStandard.Library" PrivateAssets="all" />

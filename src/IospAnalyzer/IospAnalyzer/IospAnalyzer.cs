@@ -35,7 +35,8 @@ namespace Iosp
 
     public override void Initialize(AnalysisContext context)
     {
-
+      context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze | GeneratedCodeAnalysisFlags.ReportDiagnostics);
+      
       var kinds = new[]
       {
         OperationKind.Loop,
@@ -45,7 +46,6 @@ namespace Iosp
       };
 
       context.RegisterOperationAction(AnalyseOperation, kinds);
-
     }
 
     private static void AnalyseOperation(OperationAnalysisContext context)

@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>IospAnalyzer.Attributes</PackageId>
+    <PackageVersion>1.0.0.0</PackageVersion>
+    <Authors>Benjamin Gopp</Authors>
+    <PackageProjectUrl>https://github.com/BenjaminGopp/IospAnalyzer</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>IospAnalyzer is an Roslyn analyzer to enforce the integration operation segregation principle while coding. This package contains the corresponding attributes for annotating the integration and operation methods</Description>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <Copyright>Copyright ©2020 Benjamin Gopp</Copyright>
+    <PackageTags>IospAnalyzer, analyzers, cleancode, csharp, c#, roslyn</PackageTags>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <RootNamespace>Iosp</RootNamespace>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.0.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Update="NETStandard.Library" PrivateAssets="all" />
+  </ItemGroup>
+
+
+</Project>

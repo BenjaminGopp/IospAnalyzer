@@ -29,18 +29,16 @@ namespace Iosp
 
     public static bool IsIntegrationAttribute(SemanticModel semanticModel, INamedTypeSymbol attributeType)
     {
-      return attributeType.Name == "Integration";
-      //var integrationAttributeType = semanticModel.Compilation.GetTypeByMetadataName("Iosp.IntegrationAttribute");
-      //bool isIntegrationAttribute = SymbolEqualityComparer.Default.Equals(attributeType, integrationAttributeType);
-      //return isIntegrationAttribute;
+      var integrationAttributeType = semanticModel.Compilation.GetTypeByMetadataName("Iosp.IntegrationAttribute");
+      bool isIntegrationAttribute = SymbolEqualityComparer.Default.Equals(attributeType, integrationAttributeType);
+      return isIntegrationAttribute;
     }
 
     public static bool IsOperationAttribute(SemanticModel semanticModel, INamedTypeSymbol attributeType)
     {
-      return attributeType.Name == "Operation";
       var operationAttributeType = semanticModel.Compilation.GetTypeByMetadataName("Iosp.OperationAttribute");
-      bool isIntegrationAttribute = SymbolEqualityComparer.Default.Equals(attributeType, operationAttributeType);
-      return isIntegrationAttribute;
+      bool isOperationAttribute = SymbolEqualityComparer.Default.Equals(attributeType, operationAttributeType);
+      return isOperationAttribute;
     }
   }
 }
