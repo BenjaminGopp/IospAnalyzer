@@ -23,22 +23,29 @@ namespace Iosp
 
       }
 
-
       return MethodCategory.None;
     }
 
     public static bool IsIntegrationAttribute(SemanticModel semanticModel, INamedTypeSymbol attributeType)
     {
       var integrationAttributeType = semanticModel.Compilation.GetTypeByMetadataName("Iosp.IntegrationAttribute");
-      bool isIntegrationAttribute = SymbolEqualityComparer.Default.Equals(attributeType, integrationAttributeType);
+      bool isIntegrationAttribute = CompareSymbolEquality(attributeType, integrationAttributeType);
       return isIntegrationAttribute;
     }
 
     public static bool IsOperationAttribute(SemanticModel semanticModel, INamedTypeSymbol attributeType)
     {
       var operationAttributeType = semanticModel.Compilation.GetTypeByMetadataName("Iosp.OperationAttribute");
-      bool isOperationAttribute = SymbolEqualityComparer.Default.Equals(attributeType, operationAttributeType);
+      bool isOperationAttribute = CompareSymbolEquality(attributeType, operationAttributeType);
       return isOperationAttribute;
+    }
+
+    private static bool CompareSymbolEquality(INamedTypeSymbol namedType, INamedTypeSymbol otherNamedType)
+    {
+      //return SymbolEqualityComparer.Default.Equals(attributeType, operationAttributeType); //ab roslyn 3.3.1
+
+      return namedType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat) ==
+             otherNamedType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat);
     }
   }
 }

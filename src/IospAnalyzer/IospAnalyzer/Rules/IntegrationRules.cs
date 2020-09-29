@@ -107,7 +107,7 @@ namespace Iosp
     {
       var retunType = GetReturnType(op);
 
-      if (!IsEnum(op.SemanticModel, retunType))
+      if (!IsEnum(retunType))
       {
         return IntegrationDiagnostics.SwitchValueMustBeOfTypeEnum(op.Syntax.GetLocation());
       }
@@ -126,10 +126,9 @@ namespace Iosp
       return null;
     }
 
-    private static bool IsEnum(SemanticModel semanticModel, ITypeSymbol type)
+    private static bool IsEnum(ITypeSymbol type)
     {
-      var EnumType = semanticModel.Compilation.GetTypeByMetadataName("System.Enum");
-      bool isEnum = SymbolEqualityComparer.Default.Equals(type, EnumType);
+      bool isEnum = type.TypeKind == TypeKind.Enum;
       return isEnum;
     }
 
